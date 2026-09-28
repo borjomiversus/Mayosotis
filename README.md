@@ -1,15 +1,149 @@
-# MoodWatch
-<pre style="font-family:'Courier New',Courier,monospace;font-size:12px;line-height:1.17;white-space:pre;background-color:#000;color:#fff;padding:8px;margin:0;"><span style="color:#AAAAAA">                                                        </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#AAAAAA">▀</span><span style="color:#0000AA">▄▄▄█▀</span><span style="color:#AAAAAA">                                      </span><span style="color:#0000AA">▄▄▄</span><span style="color:#0000AA;background-color:#AAAAAA">▀▀▀</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">                    </span><span style="color:#0000AA">▄▄▄</span><span style="color:#0000AA;background-color:#AAAAAA">▀▀▀</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">        </span>
-<span style="color:#AAAAAA">                                                         </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">                                        </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">                      </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">         </span>
-<span style="color:#AAAAAA">  </span><span style="color:#000000;background-color:#0000AA">▀</span><span style="color:#AAAAAA;background-color:#0000AA">▄▄▄▄▄▄▄</span><span style="color:#000000;background-color:#0000AA">▀</span><span style="color:#0000AA">▄</span><span style="color:#AAAAAA;background-color:#0000AA">▄▄▄▄▄</span><span style="color:#000000;background-color:#0000AA">▀</span><span style="color:#AAAAAA">     </span><span style="color:#000000;background-color:#0000AA">▀</span><span style="color:#AAAAAA;background-color:#0000AA">▄▄▄▄▄▄▄</span><span style="color:#000000;background-color:#0000AA">▀</span><span style="color:#AAAAAA">     </span><span style="color:#000000;background-color:#0000AA">▀</span><span style="color:#AAAAAA;background-color:#0000AA">▄▄▄▄▄▄▄</span><span style="color:#000000;background-color:#0000AA">▀</span><span style="color:#AAAAAA">           </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#AAAAAA"> ░ </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">    </span><span style="color:#000000;background-color:#0000AA">▀</span><span style="color:#AAAAAA;background-color:#0000AA">▄▄</span><span style="color:#0000AA">▄</span><span style="color:#AAAAAA">  </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">▄</span><span style="color:#000000;background-color:#0000AA">▀</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">▄</span><span style="color:#AAAAAA;background-color:#0000AA">▄▄</span><span style="color:#000000;background-color:#0000AA">▀</span><span style="color:#AAAAAA">     </span><span style="color:#0000AA">▄</span><span style="color:#0000AA;background-color:#AAAAAA">▀▀</span><span style="color:#AAAAAA">▒▀▀▄</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">▄▄</span><span style="color:#0000AA">▄▄▄</span><span style="color:#AAAAAA">  </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#AAAAAA"> ░ </span><span style="color:#0000AA">█▄</span><span style="color:#AAAAAA;background-color:#0000AA">▄</span><span style="color:#0000AA">▄</span><span style="color:#AAAAAA">    </span><span style="color:#000000;background-color:#0000AA">▀</span><span style="color:#AAAAAA;background-color:#0000AA">▄▄▄▀▀▀▄▄▄</span><span style="color:#0000AA">▄▄</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#AAAAAA"> ░ </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">         </span>
-<span style="color:#AAAAAA"> </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">█▓█</span><span style="color:#0000AA">█▀█</span><span style="color:#AAAAAA;background-color:#0000AA">█▓██▒</span><span style="color:#0000AA">██</span><span style="color:#AAAAAA;background-color:#0000AA">█▓█</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">█▓█</span><span style="color:#0000AA">█▀█</span><span style="color:#AAAAAA;background-color:#0000AA">█▓█</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">█▓█</span><span style="color:#0000AA">█▀█</span><span style="color:#AAAAAA;background-color:#0000AA">█▓█</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">      </span><span style="color:#0000AA">▄▄▄</span><span style="color:#AAAAAA"> </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#AAAAAA">░▒░</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">█▓█</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">  </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">▓█</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">  </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">█▓█</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#AAAAAA"> ░ </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">   ░</span><span style="color:#AAAAAA;background-color:#0000AA">█▓█</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#AAAAAA">░▒░</span><span style="color:#AAAAAA;background-color:#0000AA">▀▓█▀</span><span style="color:#0000AA">▀</span><span style="color:#AAAAAA">  </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">█▓█</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">    </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">▀▓▀</span><span style="color:#0000AA">▌</span><span style="color:#AAAAAA">  </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#AAAAAA">░▒░</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">         </span>
-<span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">▓▒▓ </span><span style="color:#0000AA">▌</span><span style="color:#AAAAAA"> </span><span style="color:#0000AA">▐</span><span style="color:#AAAAAA;background-color:#0000AA"> ▓▒▓</span><span style="color:#0000AA">█▌▐</span><span style="color:#AAAAAA;background-color:#0000AA"> ▓▒▓</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA"> </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">▓▒▓ </span><span style="color:#AAAAAA">   </span><span style="color:#AAAAAA;background-color:#0000AA"> ▓▒▓</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA"> </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">▓▒▓ </span><span style="color:#AAAAAA">   </span><span style="color:#AAAAAA;background-color:#0000AA"> ▓▒▓</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">  </span><span style="color:#0000AA">▄</span><span style="color:#AAAAAA;background-color:#0000AA">▄</span><span style="color:#0000AA;background-color:#AAAAAA">▀▀</span><span style="color:#AAAAAA;background-color:#0000AA">▀▀▄</span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#AAAAAA">▒▓▒</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">  </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">▓▒▓ </span><span style="color:#AAAAAA">   </span><span style="color:#AAAAAA;background-color:#0000AA"> ▓▒▓</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">  </span><span style="color:#AAAAAA;background-color:#0000AA"> ▓▒▓</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA"> </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#AAAAAA">░▒░</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">    </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">▓▒▓</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#AAAAAA">▒▓▒</span><span style="color:#0000AA">██</span><span style="color:#AAAAAA;background-color:#0000AA">░</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">  </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">▓▒▓ </span><span style="color:#AAAAAA">      </span><span style="color:#0000AA">▀▀▀</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#AAAAAA">▒▓▒</span><span style="color:#AAAAAA">▄▀▀▓</span><span style="color:#AAAAAA;background-color:#0000AA">▄▄▄</span><span style="color:#0000AA">■▄</span><span style="color:#AAAAAA"> </span>
-<span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">▒░▒</span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA;background-color:#0000AA">▒░▒</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">  </span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA;background-color:#0000AA">▒░▒</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA"> </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">▒░▒</span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA;background-color:#0000AA">▒░▒</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA"> </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">▒░▒</span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA;background-color:#0000AA">▒░▒</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA"> </span><span style="color:#AA00AA;background-color:#0000AA">░</span><span style="color:#0000AA;background-color:#AAAAAA"> ▒░</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">  </span><span style="color:#0000AA">██</span><span style="color:#0000AA;background-color:#AAAAAA">▓█▓</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">  </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">▒░▒</span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA;background-color:#0000AA">▒░▒</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">  </span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA;background-color:#0000AA">▒░▒</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA"> </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#AAAAAA">▒▓▒</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">    </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">▒░▒</span><span style="color:#AA00AA;background-color:#0000AA">░</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#AAAAAA">▓█▓</span><span style="color:#AA00AA;background-color:#0000AA">░</span><span style="color:#0000AA">▒▀</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">▒░▒</span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA">            </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#AAAAAA">▓█▓</span><span style="color:#AA00AA;background-color:#0000AA">░</span><span style="color:#AAAAAA">  </span><span style="color:#0000AA">▐</span><span style="color:#AAAAAA;background-color:#0000AA">▐</span><span style="color:#0000AA;background-color:#AAAAAA">░</span><span style="color:#AAAAAA;background-color:#0000AA">▓█▌</span><span style="color:#0000AA">▌</span>
-<span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">░ ░</span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA;background-color:#0000AA">░ ░</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">  </span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA;background-color:#0000AA">░ ░</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA"> </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">░ ░</span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA;background-color:#0000AA">░ ░</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA"> </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">░ ░</span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA;background-color:#0000AA">░ ░</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA"> </span><span style="color:#AAAAAA;background-color:#0000AA">▐</span><span style="color:#0000AA;background-color:#AAAAAA">░▓▒</span><span style="color:#0000AA">▌</span><span style="color:#AAAAAA">  </span><span style="color:#0000AA">▐</span><span style="color:#AA00AA;background-color:#0000AA">░</span><span style="color:#0000AA;background-color:#AA5500">█</span><span style="color:#5555FF;background-color:#0000AA">░</span><span style="color:#0000AA;background-color:#AAAAAA">█</span><span style="color:#0000AA">█▌</span><span style="color:#AAAAAA"> </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">░ ░</span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA;background-color:#0000AA">░ ░</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">  </span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA;background-color:#0000AA">░ ░</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA"> </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#AAAAAA">▓█▓</span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">    </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">░ ░</span><span style="color:#AA00AA;background-color:#0000AA">▒</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#0000AA"> </span><span style="color:#5555FF;background-color:#0000AA">░ </span><span style="color:#AA00AA;background-color:#0000AA">▒</span><span style="color:#0000AA">░</span><span style="color:#AAAAAA">    </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">░ ░</span><span style="color:#0000AA">▓</span><span style="color:#AAAAAA">    </span><span style="color:#0000AA">█</span><span style="color:#5555FF;background-color:#0000AA">░</span><span style="color:#0000AA">██▄</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#0000AA"> </span><span style="color:#5555FF;background-color:#0000AA">░ </span><span style="color:#AA00AA;background-color:#0000AA">▒</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">▓▒▓█</span><span style="color:#AA00AA;background-color:#0000AA">░</span>
-<span style="color:#0000AA">██</span><span style="color:#0000AA;background-color:#0000AA"> </span><span style="color:#5555FF;background-color:#0000AA">░░</span><span style="color:#AAAAAA">   </span><span style="color:#5555FF;background-color:#0000AA">░░</span><span style="color:#0000AA;background-color:#0000AA"> </span><span style="color:#0000AA">██</span><span style="color:#AAAAAA">  </span><span style="color:#5555FF;background-color:#0000AA">░░</span><span style="color:#0000AA;background-color:#0000AA"> </span><span style="color:#0000AA">██</span><span style="color:#AAAAAA">  </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#0000AA"> </span><span style="color:#5555FF;background-color:#0000AA">░▒ </span><span style="color:#0000AA">▄</span><span style="color:#5555FF;background-color:#0000AA"> ▒░</span><span style="color:#0000AA;background-color:#0000AA"> </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#0000AA"> </span><span style="color:#5555FF;background-color:#0000AA">░▒ </span><span style="color:#0000AA">▄</span><span style="color:#5555FF;background-color:#0000AA"> ▒░</span><span style="color:#0000AA;background-color:#0000AA"> </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">  </span><span style="color:#AA00AA;background-color:#0000AA">▓</span><span style="color:#0000AA;background-color:#AAAAAA">▓</span><span style="color:#0000AA;background-color:#0000AA"> </span><span style="color:#0000AA;background-color:#AAAAAA">▓▓</span><span style="color:#AAAAAA">   </span><span style="color:#AA00AA;background-color:#0000AA">▒</span><span style="color:#5555FF;background-color:#0000AA">░▒░</span><span style="color:#0000AA">█▌</span><span style="color:#AAAAAA">  </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#0000AA"> </span><span style="color:#5555FF;background-color:#0000AA">░▒</span><span style="color:#0000AA">▄</span><span style="color:#AAAAAA"> </span><span style="color:#0000AA">▄</span><span style="color:#5555FF;background-color:#0000AA">▒░</span><span style="color:#0000AA;background-color:#0000AA"> </span><span style="color:#0000AA">██▄▄</span><span style="color:#5555FF;background-color:#0000AA">▒░</span><span style="color:#0000AA;background-color:#0000AA"> </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#5555FF;background-color:#0000AA">░▒░ </span><span style="color:#0000AA">▄</span><span style="color:#AAAAAA"> </span><span style="color:#AA00AA">▄</span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#0000AA"> </span><span style="color:#5555FF;background-color:#0000AA">░ </span><span style="color:#AA00AA;background-color:#0000AA">▓</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#5555FF;background-color:#0000AA">░▒░</span><span style="color:#AA00AA;background-color:#0000AA">▓</span><span style="color:#0000AA">▓</span><span style="color:#AA00AA;background-color:#0000AA">▄■▄</span><span style="color:#AAAAAA">  </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#0000AA"> </span><span style="color:#5555FF;background-color:#0000AA">░▒ </span><span style="color:#0000AA">▄▄</span><span style="color:#5555FF;background-color:#0000AA">░░▒░</span><span style="color:#AA00AA;background-color:#0000AA">▓</span><span style="color:#AA00AA">■</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#5555FF;background-color:#0000AA">░▒░</span><span style="color:#AA00AA;background-color:#0000AA">▓</span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#AAAAAA;background-color:#0000AA">▒░░▒</span><span style="color:#AA00AA;background-color:#0000AA">▒</span>
-<span style="color:#AA00AA;background-color:#0000AA">▄▄</span><span style="color:#AA00AA">▀</span><span style="color:#AA00AA;background-color:#0000AA">▄▄</span><span style="color:#AAAAAA">   </span><span style="color:#AA00AA;background-color:#0000AA">▄▄</span><span style="color:#AA00AA">▀</span><span style="color:#AA00AA;background-color:#0000AA">▄▄</span><span style="color:#AAAAAA">  </span><span style="color:#AA00AA;background-color:#0000AA">▄▄</span><span style="color:#AA00AA">▀</span><span style="color:#AA00AA;background-color:#0000AA">▄▄</span><span style="color:#AAAAAA">   </span><span style="color:#AA00AA">▀</span><span style="color:#AA00AA;background-color:#0000AA">▄▄▄</span><span style="color:#AA00AA">■</span><span style="color:#AA00AA;background-color:#0000AA">▄▄▄</span><span style="color:#AA00AA">▀</span><span style="color:#AAAAAA">     </span><span style="color:#AA00AA">▀</span><span style="color:#AA00AA;background-color:#0000AA">▄▄▄</span><span style="color:#AA00AA">■</span><span style="color:#AA00AA;background-color:#0000AA">▄▄▄</span><span style="color:#AA00AA">▀</span><span style="color:#AAAAAA">    </span><span style="color:#000000;background-color:#AA00AA">▄</span><span style="color:#0000AA;background-color:#AA00AA">▀▀▀▀</span><span style="color:#AA00AA;background-color:#0000AA">▄▄▄</span><span style="color:#0000AA;background-color:#AA00AA">▀</span><span style="color:#5555FF;background-color:#AA00AA">▀</span><span style="color:#AA00AA">▀▀</span><span style="color:#AAAAAA">    </span><span style="color:#AA00AA">▀</span><span style="color:#AA00AA;background-color:#0000AA">▄▄▄▄▄▄▄</span><span style="color:#AA00AA">▀</span><span style="color:#AAAAAA"> </span><span style="color:#AA00AA">▀</span><span style="color:#AA00AA;background-color:#0000AA">▄▄▄▄</span><span style="color:#AA00AA">▀</span><span style="color:#AAAAAA">      </span><span style="color:#0000AA">▀</span><span style="color:#AA00AA">▀▀▀▀</span><span style="color:#AAAAAA">  </span><span style="color:#AA00AA">▀■</span><span style="color:#AA00AA;background-color:#0000AA">▄</span><span style="color:#AA00AA">█▄</span><span style="color:#AAAAAA">  </span><span style="color:#AA00AA;background-color:#0000AA">■</span><span style="color:#0000AA;background-color:#AA00AA">▀▀▀</span><span style="color:#AA00AA;background-color:#0000AA">▄▀</span><span style="color:#0000AA">▀▀▀</span><span style="color:#AAAAAA">    </span><span style="color:#0000AA">▀▀▀</span><span style="color:#AA00AA">■▀▀▀▀▀</span><span style="color:#AAAAAA">     </span><span style="color:#0000AA">█</span><span style="color:#0000AA;background-color:#AA00AA">▀▀▀ </span><span style="color:#AAAAAA">   </span><span style="color:#0000AA">█</span><span style="color:#5555FF;background-color:#0000AA">░</span><span style="color:#AA00AA;background-color:#0000AA">▄▄▄▓</span>
-<span style="color:#AAAAAA">                                                                                                     </span><span style="color:#0000AA">▀▀</span><span style="color:#AAAAAA">                         </span><span style="color:#0000AA">▀▀</span><span style="color:#AAAAAA">     </span><span style="color:#0000AA">■▀</span><span style="color:#AA00AA">▀▀</span><span style="color:#AAAAAA">    </span></pre>
+# Mayosotis
 
+## 1. Загальна інформація
+
+**Mayosotis** — персональний застосунок для пошуку, організації та відстеження фільмів і серіалів.
+
+Ідея проєкту поєднує можливості каталогу медіа, персональних списків перегляду, історії перегляду, нотаток та системи збереження випадково знайденого контенту.
+
+Основна особливість проєкту — **Нотатки**: користувач може швидко зберегти будь-яку згадку про фільм або серіал у довільній формі, навіть якщо він ще не знає його точної назви. Пізніше ця нотатка може бути пов’язана з конкретним медіа та додана до відповідного списку.
+
+## 2. Мета проєкту
+
+Метою є створення персональної системи для роботи з фільмами та серіалами, яка дозволяє:
+
+* знаходити фільми та серіали;
+* переглядати інформацію про них;
+* створювати власні списки;
+* зберігати особисті нотатки;
+* фіксувати переглянутий контент;
+* відстежувати прогрес серіалів;
+* зберігати незавершені нотатки про побачений десь контент;
+* отримувати базові рекомендації;
+* вибирати контент за доступним часом або жанром.
+
+## 3. Проблема
+
+Інформація про фільми та серіали часто знаходиться у різних місцях: каталозі, соціальних мережах, нотатках користувача, окремих списках та сервісах перегляду.
+
+Додаток має об'єднати ці сценарії в одному персональному застосунку.
+
+Особлива увага приділяється ситуації, коли користувач побачив цікавий фільм або серіал у соціальній мережі, отримав рекомендацію від друга або згадав лише частину сюжету. Такий запис можна зберегти та опрацювати пізніше.
+
+## 4. Цільова аудиторія
+
+Основний користувач — людина, яка регулярно дивиться фільми та серіали і хоче:
+
+* зберігати цікаві знахідки;
+* вести власні списки;
+* не забувати рекомендації;
+* відстежувати перегляд серіалів;
+* оцінювати переглянутий контент;
+* отримувати допомогу з вибором того, що подивитися.
+# Обґрунтування вибору технології
+
+## 5. Мова розробки
+
+Основною мовою розробки проєкту обрано **C#**.
+
+Вибір C# зумовлений кількома причинами.
+
+C# добре підтримує основні принципи ООП: класи та об’єкти, інкапсуляцію, наслідування, абстракцію, поліморфізм, інтерфейси та узагальнення.
+
+C# дозволяє розвивати проєкт у декількох напрямках:
+
+* консольний застосунок;
+* desktop GUI на Windows Forms;
+* серверна частина та API на платформі .NET;
+* робота з локальним або серверним сховищем даних;
+* інтеграція із зовнішніми веб-API.
+
+Є можливість поступово перейти від навчального ООП-прототипу до повноцінного застосунку.
+
+## 6. GUI
+
+Для першої графічної версії планується використати Windows Forms.
+
+Це дозволить створити графічний інтерфейс без необхідності одночасно вивчати складніші UI-підходи. Основна логіка проєкту залишатиметься в окремих класах та сервісах, а Windows Forms виконуватиме роль користувацького інтерфейсу.
+
+
+## 7. Основні функціональні можливості
+
+### Каталог
+
+Система працює з об'єктами фільмів і серіалів, які містять основну інформацію про медіа, жанри, теги, акторів, режисера, опис та інші характеристики.
+
+### Пошук
+
+Передбачені пошук за назвою, фільтрація за жанром та розширений пошук за жанром і роком.
+
+### Watchlists
+
+Користувач може створювати власні списки та додавати до них медіа з особистими нотатками.
+
+### Capture
+
+Користувач може зберегти необроблену нотатку, пов’язану, наприклад, із TikTok, Instagram або рекомендацією друга.
+
+Capture може перебувати у станах:
+
+* Unresolved;
+* Resolved;
+* Archived.
+
+Після визначення відповідного медіа Capture може бути пов’язаний із конкретним фільмом або серіалом.
+
+### Перегляд серіалів
+
+Серіали підтримують сезони та епізоди. Для епізоду може бути збережений checkpoint перегляду із позицією та причиною паузи.
+
+### Персональний tracking
+
+Для користувача передбачені статуси:
+
+* Planned;
+* Watching;
+* Watched;
+* Paused;
+* Dropped;
+* Rewatching.
+
+### Власна система Vibe Rating
+
+Для медіа використовується деталізована оцінка за шістьма критеріями:
+
+* Characters;
+* Plot;
+* Visuals;
+* Pacing;
+* Vibe;
+* Soundtrack.
+
+### Recommendations та Roulette
+
+Проєкт містить базовий механізм пошуку схожого контенту та Smart Roulette, яка може обирати медіа з урахуванням доступного часу та жанру/тега.
+
+## 8. Особливість проєкту
+
+На відміну від звичайного каталогу, Mayosotis робить акцент на **персональному контексті користувача**.
+
+Тобто користувач може спочатку зберегти нечітку згадку про контент, а структурувати її пізніше.
+
+## 9. Стан реалізації
+
+На поточному етапі реалізовано консольний вигляд на C#.
+
+Реалізовані моделі медіа, користувача, списків, capture-записів, сезонів, епізодів, ratings, history та tracking.
+
+Також реалізовані сервіси пошуку, роботи з Capture, рекомендацій та Roulette.
+
+### Наступні етапи
+
+1. Графічний інтерфейс на Windows Forms.
+2. Підключення зовнішнього API для отримання метаданих фільмів і серіалів.
+3. Постійне збереження даних.
+4. Авторизація та користувацький профіль.
+5. Розширення рекомендаційної та соціальної функціональності.
 
 
 https://coolors.co/84dcc6-1a2235-5c80bc-332d57-e2e8f0 тусклее аквамарин
@@ -18,65 +152,3 @@ https://coolors.co/41d3bd-1a2235-5c80bc-332d57-e2e8f0 ярче
 
 
 https://coolors.co/5c80bc-41d3bd-1a2235-d4915a-332d57-e2e8f0 остаточно 6 кольорів 
-Клас MediaEntity (Абстрактний базовий клас)
-
-Поля: title (Назва), releaseYear (Рік випуску), synopsis (Опис), productionStudio (Студія/Виробництво), posterUrl (Посилання на іконку/постер), trailerUrl (Посилання на трейлер), genres (Список жанрів), tags (Список тегів/кліше).
-
-Методи: addTag(), loadPoster(). Віртуальний метод calculateTimeDebt() (це обов'язковий динамічний поліморфізм).
-
-Клас Movie (Успадковується від MediaEntity)
-
-Поля: durationMinutes (Час фільму).
-
-Методи: Перевизначений calculateTimeDebt() — просто повертає свою тривалість у хвилинах.
-
-Клас Series (Успадковується від MediaEntity)
-
-Поля: totalSeasons (Кількість сезонів), averageEpisodeLength (Середній час серії).
-
-Методи: Перевизначений calculateTimeDebt() — рахує залишок непереглянутих серій і множить на час.
-
-Ієрархія 2: Люди в кіно (Базовий клас та 2 спадкоємці)
-Щоб виконати вимогу про другу ієрархію успадкування.
-
-Клас Person (Базовий клас)
-
-Поля: fullName (Ім'я та Прізвище), birthYear (Рік народження).
-
-Методи: getAge().
-
-Клас Actor (Успадковується від Person)
-
-Поля: roleName (Ім'я персонажа у фільмі).
-
-Методи: getRoleInfo().
-
-Клас Director (Успадковується від Person)
-
-Поля: signatureStyle (Опис режисерського стилю, наприклад "Любить симетричні кадри").
-
-Додаткові класи для твоїх унікальних фіч
-
-Клас VibeRating (Оцінка за критеріями та відгуки)
-
-Поля: plotScore (Сюжет 1-10), pacingScore (Динаміка 1-10), characterScore (Персонажі), aestheticScore (Візуал), impactScore (Післясмак/Емоції), overallScore (Загальна оцінка), externalReviews (Масив відгуків з інтернету).
-
-Методи: calculateAverageScore(), fetchInternetReviews() (у третій лабі він буде лізти в мережу).
-
-Клас HiatusRecord (Трекер заморозки)
-
-Поля: freezeDate (Дата зупинки), stoppedSeason (На якому сезоні), stoppedEpisode (На якій серії), timecode (Точна хвилина і секунда), freezeReason (Причина заморозки: нудно/немає часу).
-
-Методи: resumeWatching() (Видаляє статус заморозки і нагадує, де ти зупинилася).
-
-Клас FranchiseTimeline (Таймлайн франшиз)
-
-Поля: universeName (Наприклад, "Marvel Cinematic Universe"), chronologicalList (Список об'єктів MediaEntity у правильному порядку перегляду).
-
-Методи: calculateUniverseProgress() (Рахує у відсотках, скільки фільмів із франшизи ти вже переглянула).
-
-Клас SmartRoulette (Рулетка)
-
-Поля: availableTimeMinutes (Скільки в тебе є часу зараз), moodTags (Який настрій/теги ти хочеш).
-
-Методи: Тут ми реалізуємо статичний поліморфізм через шаблони (templates) у C++. Наприклад, шаблонний метод template <typename T> filterList(T filterCriterion), який зможе фільтрувати список як за тегами (текстом), так і за часом (цифрами). Метод spinRoulette() обиратиме один рандомний фільм із відфільтрованого списку.
