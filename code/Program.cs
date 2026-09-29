@@ -34,7 +34,8 @@ class Program
 
         // Нотатник
         me.AddCapture("The Boys, порадили", "Друг");
-        var myCapture = me.GetUnresolvedCaptures().First();
+        var unresolved = me.GetUnresolvedCaptures();
+        var myCapture = unresolved[0];
         Console.WriteLine($"[1] Створено нотатку: '{myCapture.RawNote}'. Статус: {myCapture.Status}");
 
         captureService.ResolveCapture(myCapture, theBoys);
@@ -45,11 +46,13 @@ class Program
 
         // Пошук
         var found = searchService.SearchByTitle(library, "boys");
-        Console.WriteLine($"\n[Пошук] За словом 'boys' знайдено: {string.Join(", ", found.Select(m => m.Title))}");
+        Console.Write("\n[Пошук] За словом 'boys' знайдено: ");
+        foreach (var m in found) Console.Write(m.Title + " ");
+        Console.WriteLine();
 
         // Рекомендації
         var similar = recommendationService.FindSimilar(library, theBoys, 1);
-        if (similar.Any())
+        if (similar.Count > 0)
             Console.WriteLine($"[Рекомендації] Схоже на The Boys: {similar[0].Title}");
 
         // Рулетка
