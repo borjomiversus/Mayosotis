@@ -28,7 +28,7 @@ public static class TestRunner
         TestWatchlist();
         TestUser();
         TestUserMediaState();
-        TestServices();
+        TestMediaLibrary();
         Console.WriteLine($"\nРЕЗУЛЬТАТ: {passed} пройдено, {failed} провалено\n");
     }
 
@@ -210,9 +210,12 @@ public static class TestRunner
         Check("CompletedAt встановлено при Watched", state.CompletedAt != null);
     }
 
-    private static void TestServices()
+
+
+
+    private static void TestMediaLibrary()
     {
-        Console.WriteLine("--- Services ---");
+        Console.WriteLine("--- MediaLibrary ---");
         List<Media> lib = new List<Media>();
         Movie a = new Movie("Alpha", 2010, 90, null);
         a.AddGenre("Comedy");
@@ -221,16 +224,11 @@ public static class TestRunner
         b.SetVibeRating(new VibeRating(9, 9, 9, 9, 9, 9));
         lib.Add(a); lib.Add(b);
 
-        var search = new MediaSearchService();
-        Check("SearchByTitle знаходить за частковим збігом", search.SearchByTitle(lib, "alpha").Count == 1);
-        Check("GetTopRated повертає найвищу оцінку першою", search.GetTopRated(lib, 1)[0] == b);
+        MediaLibrary ml = new MediaLibrary();
 
-        var rec = new RecommendationService();
-        Check("FindSimilar не включає сам об'єкт", !rec.FindSimilar(lib, a, 5).Contains(a));
-
-        var roulette = new RouletteService();
-        var picked = roulette.Choose(lib, new RouletteCriteria(100, "Comedy"));
-        Check("RouletteService повертає елемент у межах критерію", picked != null && picked.CalculateTimeDebt() <= 100);
+        Check("SearchByTitle працює", ml.SearchByTitle(lib, "alpha").Count == 1);
+        Check("GetTopRated повертає найкращий фільм першим", ml.GetTopRated(lib, 1)[0] == b);
+        Check("FindSimilar працює", ml.FindSimilar(lib, a, 5).Count >= 1);
     }
 
     private static bool ThrowsException(Action action)

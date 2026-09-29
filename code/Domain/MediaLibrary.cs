@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Пошук і фільтрація
-
-
-public class MediaSearchService
+public class MediaLibrary
 {
     public List<Media> SearchByTitle(List<Media> library, string title)
     {
@@ -18,6 +15,7 @@ public class MediaSearchService
         }
         return results;
     }
+
     public List<Media> FilterByGenre(List<Media> library, string genre)
     {
         List<Media> results = new List<Media>();
@@ -78,55 +76,32 @@ public class MediaSearchService
         }
         return result;
     }
-}
 
-// рек схоже на те, що сподобалось
-public class RecommendationService
+    public List<Media> FindSimilar(List<Media> library, Media reference, int count)
     {
-        public List<Media> FindSimilar(List<Media> library, Media reference, int count)
+        List<Media> similar = new List<Media>();
+        foreach (var m in library)
         {
-            List<Media> similar = new List<Media>();
-
-            // всі, крім того самого фільму
-            foreach (var m in library)
-            {
-                if (m != reference) similar.Add(m);
-            }
-
-            similar.Sort((a, b) => {
-                int sharedA = a.CountSharedGenres(reference);
-                int sharedB = b.CountSharedGenres(reference);
-                return sharedB.CompareTo(sharedA); 
-            });
-
-            List<Media> result = new List<Media>();
-            for (int i = 0; i < Math.Min(count, similar.Count); i++)
-            {
-                result.Add(similar[i]);
-            }
-            return result;
+            if (m != reference) similar.Add(m);
         }
+
+        similar.Sort((a, b) => {
+            int sharedA = a.CountSharedGenres(reference);
+            int sharedB = b.CountSharedGenres(reference);
+            return sharedB.CompareTo(sharedA);
+        });
+
+        List<Media> result = new List<Media>();
+        for (int i = 0; i < Math.Min(count, similar.Count); i++)
+        {
+            result.Add(similar[i]);
+        }
+        return result;
     }
 
-// критерії для рулетки окремий об'єкт 
-public class RouletteCriteria
-{
-    public int MaxMinutes { get; private set; }
-    public string? Tag { get; private set; }
-    public RouletteCriteria(int maxMinutes, string? tag = null)
-    {
-        if (maxMinutes < 0) throw new ArgumentOutOfRangeException(nameof(maxMinutes));
-        MaxMinutes = maxMinutes;
-        Tag = tag;
-    }
-}
-
-public class RouletteService
-{
-    public Media? Choose(List<Media> library, RouletteCriteria criteria)
+    public Media? ChooseByRoulette(List<Media> library, RouletteCriteria criteria)
     {
         List<Media> filtered = new List<Media>();
-
         foreach (var m in library)
         {
             if (m.CalculateTimeDebt() <= criteria.MaxMinutes)
@@ -148,36 +123,34 @@ public class RouletteService
         int index = random.Next(filtered.Count);
         return filtered[index];
     }
-}
 
-// розпізнати нотатку і перенести в підбірку
-public class CaptureService
-{
-    // щоб зв'язати швидку нотатку з конкретним знайденим фільмом
     public void ResolveCapture(CaptureEntry capture, Media identifiedMedia)
     {
-        if (capture == null || identifiedMedia == null)
-        {
-            return;
-        }
+        if (capture == null || identifiedMedia == null) return;
         capture.Resolve(identifiedMedia);
     }
 
-    // Перенос розпізнаної нотатки в обраний список (Watchlist)
     public bool MoveToWatchlist(CaptureEntry capture, Watchlist watchlist)
     {
-        if (capture.Status != CaptureStatus.Resolved)
+        if (capture.Status != CaptureStatus.Resolved || capture.ResolvedMedia == null)
         {
             return false;
         }
-
-        if (capture.ResolvedMedia == null)
-        {
-            return false;
-        }
-
         watchlist.AddEntry(capture.ResolvedMedia, capture.RawNote);
         capture.Archive();
         return true;
     }
 }
+
+public class RouletteCriteria
+{
+    public int MaxMinutes { get; private set; }
+    public string? Tag { get; private set; }
+    public RouletteCriteria(int maxMinutes, string? tag = null)
+    {
+        if (maxMinutes < 0) throw new ArgumentOutOfRangeException(nameof(maxMinutes));
+        MaxMinutes = maxMinutes;
+        Tag = tag;
+    }
+}
+

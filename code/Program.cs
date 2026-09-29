@@ -14,10 +14,7 @@ class Program
         // просто список у пам'яті
         List<Media> library = new List<Media>();
 
-        var searchService = new MediaSearchService();
-        var recommendationService = new RecommendationService();
-        var rouletteService = new RouletteService();
-        var captureService = new CaptureService();
+        MediaLibrary mediaLibrary = new MediaLibrary();
 
         Director dir = new Director("Eric Kripke", 1974, "Satire");
         Series theBoys = new Series("The Boys", 2019, 60, 8, dir);
@@ -32,34 +29,28 @@ class Program
         User me = new User("spacedream");
         Watchlist plans = me.CreateWatchlist("Плани", isPrivate: true);
 
-        // Нотатник
         me.AddCapture("The Boys, порадили", "Друг");
         var unresolved = me.GetUnresolvedCaptures();
         var myCapture = unresolved[0];
-        Console.WriteLine($"[1] Створено нотатку: '{myCapture.RawNote}'. Статус: {myCapture.Status}");
 
-        captureService.ResolveCapture(myCapture, theBoys);
-        Console.WriteLine($"[2] Нотатку розпізнано. Статус: {myCapture.Status}");
+        mediaLibrary.ResolveCapture(myCapture, theBoys);
+        mediaLibrary.MoveToWatchlist(myCapture, plans);
+        Console.WriteLine($"[1] Нотатку оброблено та перенесено в '{plans.Name}'.");
 
-        captureService.MoveToWatchlist(myCapture, plans);
-        Console.WriteLine($"[3] Нотатку перенесено. У списку '{plans.Name}' тепер {plans.Entries.Count} записів. Статус нотатки: {myCapture.Status}");
-
-        // Пошук
-        var found = searchService.SearchByTitle(library, "boys");
-        Console.Write("\n[Пошук] За словом 'boys' знайдено: ");
-        foreach (var m in found) Console.Write(m.Title + " ");
-        Console.WriteLine();
+        // Пошук 
+        var found = mediaLibrary.SearchByTitle(library, "boys");
+        Console.WriteLine($"[2] Пошук 'boys' знайшов: {found[0].Title}");
 
         // Рекомендації
-        var similar = recommendationService.FindSimilar(library, theBoys, 1);
+        var similar = mediaLibrary.FindSimilar(library, theBoys, 1);
         if (similar.Count > 0)
-            Console.WriteLine($"[Рекомендації] Схоже на The Boys: {similar[0].Title}");
+            Console.WriteLine($"[3] Рекомендація: {similar[0].Title}");
 
-        // Рулетка
-        var choice = rouletteService.Choose(library, new RouletteCriteria(1000,"Action"));
+        // Рулетка 
+        var choice = mediaLibrary.ChooseByRoulette(library, new RouletteCriteria(1000, "Action"));
         if (choice != null)
-            Console.WriteLine($"[Рулетка] Обрано: {choice.Title}");
-
+            Console.WriteLine($"[4] Рулетка обрала: {choice.Title}");
+  
         // Перегляд + статистика
         me.RecordView(ugly);
         me.MarkAsWatched(ugly);
