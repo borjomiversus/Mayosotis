@@ -106,10 +106,8 @@ public class RouletteService
 
         foreach (var m in library)
         {
-            // Перевіряємо час
             if (m.CalculateTimeDebt() <= criteria.MaxMinutes)
             {
-                // Перевіряємо тег, якщо він заданий
                 if (string.IsNullOrEmpty(criteria.Tag))
                 {
                     filtered.Add(m);
