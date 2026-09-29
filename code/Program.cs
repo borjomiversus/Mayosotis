@@ -56,7 +56,7 @@ class Program
             Console.WriteLine($"[Рекомендації] Схоже на The Boys: {similar[0].Title}");
 
         // Рулетка
-        var choice = rouletteService.Choose(library, new RouletteCriteria { MaxMinutes = 1000, Tag = "Action" });
+        var choice = rouletteService.Choose(library, new RouletteCriteria(1000,"Action"));
         if (choice != null)
             Console.WriteLine($"[Рулетка] Обрано: {choice.Title}");
 

@@ -52,11 +52,13 @@ public static class TestRunner
         Check("AddToFilmography додає елемент", a.GetWorksCount() == 1);
         Check("HasWorkedOn знаходить існуючий тайтл", a.HasWorkedOn("Movie A"));
         Check("Actor без ролі", ThrowsException(() => new Actor("Test", 1990, "")));
-
+   
         Director d = new Director("Test Director", 1970, "Style");
         d.AddDirectedWork("Film X");
         Check("AddDirectedWork додає роботу", d.DirectedWorks.Contains("Film X"));
         Check("Director успадковує GetAge", d.GetAge(2026) == 56);
+        Check("Director без стилю", ThrowsException(() => new Director("Test", 1970, "")));
+
     }
 
     private static void TestMedia()
@@ -150,6 +152,7 @@ public static class TestRunner
         f.AddToTimeline(new Movie("F1", 2001, 100, null));
         f.AddToTimeline(new Movie("F2", 2003, 100, null));
         Check("AddToTimeline додає елементи", f.ChronologicalList.Count == 2);
+        Check("Відсутня назва всесвіту ", ThrowsException(() => new FranchiseTimeLine("")));
     }
 
     private static void TestCaptureEntry()
@@ -226,7 +229,7 @@ public static class TestRunner
         Check("FindSimilar не включає сам об'єкт", !rec.FindSimilar(lib, a, 5).Contains(a));
 
         var roulette = new RouletteService();
-        var picked = roulette.Choose(lib, new RouletteCriteria { MaxMinutes = 100 });
+        var picked = roulette.Choose(lib, new RouletteCriteria(100, "Comedy"));
         Check("RouletteService повертає елемент у межах критерію", picked != null && picked.CalculateTimeDebt() <= 100);
     }
 

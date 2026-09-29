@@ -111,8 +111,14 @@ public class RecommendationService
 // критерії для рулетки окремий об'єкт 
 public class RouletteCriteria
 {
-    public int MaxMinutes { get; init; }
-    public string? Tag { get; init; }
+    public int MaxMinutes { get; private set; }
+    public string? Tag { get; private set; }
+    public RouletteCriteria(int maxMinutes, string? tag = null)
+    {
+        if (maxMinutes < 0) throw new ArgumentOutOfRangeException(nameof(maxMinutes));
+        MaxMinutes = maxMinutes;
+        Tag = tag;
+    }
 }
 
 public class RouletteService
