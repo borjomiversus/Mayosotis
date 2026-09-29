@@ -1,34 +1,47 @@
 ﻿using System;
 
-// сюди падає все, що зачепило користувача, ще до того, як стало структурованим об'єктом Media
-// стани: розпізнано одразу / назва+нотатка / не розпізнано
+public enum CaptureStatus
+{
+    Unresolved,
+    Resolved,
+    Archived
+}
+
+// Сюди падає все, що зачепило користувача, ще до того, як стало структурованим Media.
 public class CaptureEntry
 {
-    public string RawNote;       
-    public string Source;        
-    public DateTime CapturedAt;
-    public bool IsResolved;
-    public Media ResolvedMedia;  // заповнюється, коли вдалось ідентифікувати тайтл
+    public string RawNote { get; private set; }
+    public string? Source { get; private set; }
+    public DateTime CapturedAt { get; private set; }
+    public CaptureStatus Status { get; private set; }
+    public Media? ResolvedMedia { get; private set; }
 
-    public CaptureEntry(string rawNote, string source)
+    public CaptureEntry(string rawNote, string? source)
     {
+        if (string.IsNullOrWhiteSpace(rawNote))
+            throw new ArgumentException("Нотатка не може бути порожньою.", nameof(rawNote));
+
         RawNote = rawNote;
         Source = source;
         CapturedAt = DateTime.Now;
-        IsResolved = false;
+        Status = CaptureStatus.Unresolved;
     }
 
-    // Викликається, коли тайтл вдалось знайти 
     public void Resolve(Media identifiedMedia)
     {
-        ResolvedMedia = identifiedMedia;
-        IsResolved = true;
+        ResolvedMedia = identifiedMedia ?? throw new ArgumentNullException(nameof(identifiedMedia));
+        Status = CaptureStatus.Resolved;
     }
+
+    public void Archive() => Status = CaptureStatus.Archived;
 
     public string GetStatusSummary()
     {
-        return IsResolved
-            ? $"✓ Розпізнано: {ResolvedMedia.Title} (з нотатки: \"{RawNote}\")"
-            : $"? Ще не розпізнано: \"{RawNote}\" (джерело: {Source})";
+        return Status switch
+        {
+            CaptureStatus.Resolved => $"✓ Розпізнано: {ResolvedMedia!.Title} (з нотатки: \"{RawNote}\")",
+            CaptureStatus.Archived => $"[архів] {RawNote}",
+            _ => $"? Ще не розпізнано: \"{RawNote}\" (джерело: {Source})"
+        };
     }
 }

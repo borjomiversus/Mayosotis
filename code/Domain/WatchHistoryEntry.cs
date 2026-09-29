@@ -1,14 +1,14 @@
 using System;
 
-// що дивилась + коли — на відміну від RecentlyViewed (просто останні 10)
+// що дивилась + коли — окремо від RecentlyViewed, зберігається повністю для підрахунку статистики.
 public class WatchHistoryEntry
 {
-    public Media WatchedItem;
-    public DateTime WatchDate;
+    public Media WatchedItem { get; private set; }
+    public DateTime WatchDate { get; private set; }
 
     public WatchHistoryEntry(Media watchedItem, DateTime watchDate)
     {
-        WatchedItem = watchedItem;
+        WatchedItem = watchedItem ?? throw new ArgumentNullException(nameof(watchedItem));
         WatchDate = watchDate;
     }
 }

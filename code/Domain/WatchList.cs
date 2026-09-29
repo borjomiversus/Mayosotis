@@ -2,22 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// Підбірка, яку створює сам користувач
-
 public class Watchlist
 {
-    public string Name;
-    public bool IsPrivate;
-    public List<WatchlistEntry> Entries;
+    public string Name { get; private set; }
+    public bool IsPrivate { get; private set; }
+    public List<WatchlistEntry> Entries { get; private set; }
 
     public Watchlist(string name, bool isPrivate = true)
     {
+        if (string.IsNullOrWhiteSpace(name))
+            throw new ArgumentException("Назва підбірки не може бути порожньою.", nameof(name));
+
         Name = name;
         IsPrivate = isPrivate;
         Entries = new List<WatchlistEntry>();
     }
 
-    public void AddEntry(Media item, string personalNote)
+    public void AddEntry(Media item, string? personalNote)
     {
         Entries.Add(new WatchlistEntry(item, personalNote));
     }
@@ -32,7 +33,7 @@ public class Watchlist
 
     public int GetTotalTimeDebt()
     {
-        return Entries.Where(e => e.Item != null).Sum(e => e.Item.CalculateTimeDebt());
+        return Entries.Sum(e => e.Item.CalculateTimeDebt());
     }
 
     public void PrintContents()
@@ -44,8 +45,6 @@ public class Watchlist
             return;
         }
         foreach (var entry in Entries)
-        {
             Console.WriteLine(entry.GetSummary());
-        }
     }
 }

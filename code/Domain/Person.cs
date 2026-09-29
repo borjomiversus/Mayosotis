@@ -2,10 +2,10 @@
 
 public class Person
 {
-    public string FullName;
-    public int BirthYear;
-    public string Biography;
-    public string PhotoUrl;
+    public string FullName { get; private set; }
+    public int BirthYear { get; private set; }
+    public string? Biography { get; private set; }
+    public string? PhotoUrl { get; private set; }   
 
     public Person(string fullName, int birthYear)
     {

@@ -2,13 +2,14 @@
 
 public class Movie : Media
 {
-    public int DurationMinutes;
+    public int DurationMinutes { get; private set; }
 
-    public Movie(string title, int releaseYear, int durationMinutes, Director director)
-        : base(title, releaseYear)
+    public Movie( string title, int releaseYear, int durationMinutes, Director? director) : base(title, releaseYear, director)
     {
+        if (durationMinutes <= 0)
+            throw new ArgumentOutOfRangeException(nameof(durationMinutes));
+
         DurationMinutes = durationMinutes;
-        MediaDirector = director;
     }
 
     public override int CalculateTimeDebt()

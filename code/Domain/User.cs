@@ -4,21 +4,26 @@ using System.Linq;
 
 public class User
 {
-    public string Username;
-    public List<Watchlist> Watchlists;
-    public List<CaptureEntry> Captures; 
-    public List<string> RecentSearches;
-    public List<Media> RecentlyViewed;
-    public List<WatchHistoryEntry> WatchHistory;
+    public string Username { get; private set; }
+    public List<Watchlist> Watchlists { get; private set; }
+    public List<CaptureEntry> Captures { get; private set; }
+    public List<string> RecentSearches { get; private set; }
+    public List<Media> RecentlyViewed { get; private set; }
+    public List<WatchHistoryEntry> WatchHistory { get; private set; }
+    public List<UserMediaState> MediaStates { get; private set; }
 
     public User(string username)
     {
+        if (string.IsNullOrWhiteSpace(username))
+            throw new ArgumentException("Ім'я користувача не може бути порожнім.", nameof(username));
+
         Username = username;
         Watchlists = new List<Watchlist>();
         Captures = new List<CaptureEntry>();
         RecentSearches = new List<string>();
         RecentlyViewed = new List<Media>();
         WatchHistory = new List<WatchHistoryEntry>();
+        MediaStates = new List<UserMediaState>();
     }
 
     public Watchlist CreateWatchlist(string name, bool isPrivate = true)
@@ -28,55 +33,84 @@ public class User
         return list;
     }
 
-    public void AddCapture(string rawNote, string source)
+    public void AddCapture(string rawNote, string? source)
     {
         Captures.Add(new CaptureEntry(rawNote, source));
     }
 
-    // Переносить уже розпізнану нотатку у конкретну підбірку
     public bool MoveResolvedCaptureToWatchlist(CaptureEntry capture, string watchlistName)
     {
-        if (!capture.IsResolved) return false;
+        if (capture.Status != CaptureStatus.Resolved || capture.ResolvedMedia == null)
+            return false;
+
         var target = Watchlists.FirstOrDefault(w => w.Name == watchlistName);
-        if (target == null) return false;
+        if (target == null)
+            return false;
+
         target.AddEntry(capture.ResolvedMedia, capture.RawNote);
-        Captures.Remove(capture);
+        capture.Archive();
+
         return true;
     }
 
     public void LogSearch(string query)
     {
+        if (string.IsNullOrWhiteSpace(query))
+            return;
+
         RecentSearches.Insert(0, query);
-        if (RecentSearches.Count > 10) RecentSearches.RemoveAt(RecentSearches.Count - 1);
+
+        if (RecentSearches.Count > 10)
+            RecentSearches.RemoveAt(RecentSearches.Count - 1);
     }
 
-    public void LogView(Media item)
+    public void RecordView(Media item)
     {
         RecentlyViewed.Remove(item);
         RecentlyViewed.Insert(0, item);
-        if (RecentlyViewed.Count > 10) RecentlyViewed.RemoveAt(RecentlyViewed.Count - 1);
+
+        if (RecentlyViewed.Count > 10)
+            RecentlyViewed.RemoveAt(RecentlyViewed.Count - 1);
+    }
+
+    public void MarkAsWatched(Media item)
+    {
         WatchHistory.Add(new WatchHistoryEntry(item, DateTime.Now));
     }
 
     public List<CaptureEntry> GetUnresolvedCaptures()
     {
-        return Captures.Where(c => !c.IsResolved).ToList();
+        return Captures.Where(c => c.Status == CaptureStatus.Unresolved).ToList();
     }
 
-    public int GetMonthlyStats(int month)
+    public int GetMonthlyStats(int year, int month)
     {
         return WatchHistory
-            .Where(h => h.WatchDate.Month == month)
+            .Where(h => h.WatchDate.Year == year && h.WatchDate.Month == month)
             .Sum(h => h.WatchedItem.CalculateTimeDebt());
     }
 
-    // статистика за жанром за конкретний місяць
-    public Dictionary<string, int> GetMonthlyGenreBreakdown(int month)
+    public Dictionary<string, int> GetMonthlyGenreBreakdown(int year, int month)
     {
-        return WatchHistory
-            .Where(h => h.WatchDate.Month == month)
-            .SelectMany(h => h.WatchedItem.Genres.Select(g => new { Genre = g, Item = h.WatchedItem }))
-            .GroupBy(x => x.Genre)
-            .ToDictionary(g => g.Key, g => g.Count());
+        var breakdown = new Dictionary<string, int>();
+        foreach (var historyEntry in WatchHistory)
+        {
+            if (historyEntry.WatchDate.Year == year && historyEntry.WatchDate.Month == month)
+            {
+                foreach (var genre in historyEntry.WatchedItem.Genres)
+                {
+                    if (breakdown.ContainsKey(genre))
+                    {
+                        breakdown[genre]++; 
+                    }
+                    else
+                    {
+                        breakdown[genre] = 1;
+                    }
+                }
+            }
+        }
+
+        return breakdown;
     }
 }
