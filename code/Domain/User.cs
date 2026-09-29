@@ -105,27 +105,24 @@ public class User
         return totalDebt;
     }
 
-    public Dictionary<string, int> GetMonthlyGenreBreakdown(int year, int month)
+
+    public Dictionary<string, int> GetMonthlyGenreStats(int year, int month)
     {
-        var breakdown = new Dictionary<string, int>();
-        foreach (var historyEntry in WatchHistory)
+        Dictionary<string, int> stats = new Dictionary<string, int>();
+
+        foreach (var history in WatchHistory)
         {
-            if (historyEntry.WatchDate.Year == year && historyEntry.WatchDate.Month == month)
+            if (history.WatchDate.Year == year && history.WatchDate.Month == month)
             {
-                foreach (var genre in historyEntry.WatchedItem.Genres)
+                foreach (var genre in history.WatchedItem.Genres)
                 {
-                    if (breakdown.ContainsKey(genre))
-                    {
-                        breakdown[genre]++; 
-                    }
+                    if (stats.ContainsKey(genre))
+                        stats[genre] = stats[genre] + 1;
                     else
-                    {
-                        breakdown[genre] = 1;
-                    }
+                        stats.Add(genre, 1);
                 }
             }
         }
-
-        return breakdown;
+        return stats;
     }
 }

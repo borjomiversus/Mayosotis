@@ -185,8 +185,8 @@ public static class TestRunner
         Check("GetMonthlyStats рахує за рік+місяць", u.GetMonthlyStats(2026, 1) == 100);
         Check("GetMonthlyStats не бачить інший місяць", u.GetMonthlyStats(2026, 2) == 0);
 
-        var breakdown = u.GetMonthlyGenreBreakdown(2026, 1);
-        Check("GetMonthlyGenreBreakdown бачить жанр", breakdown.ContainsKey("Comedy"));
+        var breakdown = u.GetMonthlyGenreStats(2026, 1);
+        Check("GetMonthlyGenreStats бачить жанр", breakdown.ContainsKey("Comedy"));
     }
 
     private static void TestUserMediaState()
