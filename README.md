@@ -152,3 +152,6 @@ https://coolors.co/41d3bd-1a2235-5c80bc-332d57-e2e8f0 ярче
 
 
 https://coolors.co/5c80bc-41d3bd-1a2235-d4915a-332d57-e2e8f0 остаточно 6 кольорів 
+
+референс, який відтворю в канва <img width="837" height="657" alt="image" src="https://github.com/user-attachments/assets/4a81e7b6-2778-46d0-a3f1-27fbdc2a473c" />
+
