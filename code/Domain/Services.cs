@@ -132,14 +132,29 @@ public class RouletteService
 // розпізнати нотатку і перенести в підбірку
 public class CaptureService
 {
+    // щоб зв'язати швидку нотатку з конкретним знайденим фільмом
     public void ResolveCapture(CaptureEntry capture, Media identifiedMedia)
     {
+        if (capture == null || identifiedMedia == null)
+        {
+            return;
+        }
         capture.Resolve(identifiedMedia);
     }
 
+    // Перенос розпізнаної нотатки в обраний список (Watchlist)
     public bool MoveToWatchlist(CaptureEntry capture, Watchlist watchlist)
     {
-        if (capture.Status != CaptureStatus.Resolved || capture.ResolvedMedia == null) return false;
+        if (capture.Status != CaptureStatus.Resolved)
+        {
+            return false;
+        }
+
+        if (capture.ResolvedMedia == null)
+        {
+            return false;
+        }
+
         watchlist.AddEntry(capture.ResolvedMedia, capture.RawNote);
         capture.Archive();
         return true;
