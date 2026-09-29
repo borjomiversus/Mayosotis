@@ -1,4 +1,4 @@
-# Mayosotis
+# Myosotis
 
 ## 1. Загальна інформація
 
