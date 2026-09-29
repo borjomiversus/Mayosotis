@@ -9,6 +9,11 @@ public class Person
 
     public Person(string fullName, int birthYear)
     {
+        if (string.IsNullOrWhiteSpace(fullName))
+            throw new ArgumentException("Ім'я не може бути порожнім.");
+        if (birthYear < 1850 || birthYear > DateTime.Now.Year)
+            throw new ArgumentOutOfRangeException(nameof(birthYear));
+
         FullName = fullName;
         BirthYear = birthYear;
     }

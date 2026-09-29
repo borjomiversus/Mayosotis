@@ -9,6 +9,11 @@ public class Song
 
     public Song(string title, string artist, string? spotifyUrl = null)
     {
+        if (string.IsNullOrWhiteSpace(title))
+            throw new ArgumentException("Назва пісні відсутня.");
+        if (string.IsNullOrWhiteSpace(artist))
+            throw new ArgumentException("Виконавець не вказаний.");
+
         Title = title;
         Artist = artist;
         SpotifyUrl = spotifyUrl;

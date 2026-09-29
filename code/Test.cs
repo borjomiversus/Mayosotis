@@ -40,6 +40,8 @@ public static class TestRunner
         p.UpdateBiography("Тест");
         Check("UpdateBiography змінює Biography", p.Biography == "Тест");
         Check("GetBasicInfo містить ім'я", p.GetBasicInfo().Contains("Jane Doe"));
+        Check("Person з порожнім ім'ям", ThrowsException(() => new Person("", 1990)));
+        Check("Person з некоректним роком", ThrowsException(() => new Person("John", 1800)));
     }
 
     private static void TestActorDirector()
@@ -49,6 +51,7 @@ public static class TestRunner
         a.AddToFilmography("Movie A");
         Check("AddToFilmography додає елемент", a.GetWorksCount() == 1);
         Check("HasWorkedOn знаходить існуючий тайтл", a.HasWorkedOn("Movie A"));
+        Check("Actor без ролі", ThrowsException(() => new Actor("Test", 1990, "")));
 
         Director d = new Director("Test Director", 1970, "Style");
         d.AddDirectedWork("Film X");
@@ -117,6 +120,8 @@ public static class TestRunner
         Review r = new Review(author, m, "Головний герой помирає", isSpoiler: true);
         Check("GetDisplayText приховує спойлер за замовчуванням", !r.GetDisplayText().Contains("помирає"));
         Check("GetDisplayText показує спойлер, якщо попросили", r.GetDisplayText(true).Contains("помирає"));
+        Check("Song без назви", ThrowsException(() => new Song("", "Artist")));
+        Check("Song без виконавця", ThrowsException(() => new Song("Title", "")));
 
         Song s1 = new Song("Song One", "Artist A");
         Song s2 = new Song("Song Two", "Artist B");
