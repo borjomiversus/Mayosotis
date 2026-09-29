@@ -3,48 +3,93 @@ using System.Collections.Generic;
 using System.Linq;
 
 // Пошук і фільтрація
+
+
 public class MediaSearchService
 {
     public List<Media> SearchByTitle(List<Media> library, string title)
     {
-        return library.Where(m => m.Title.Contains(title, StringComparison.OrdinalIgnoreCase)).ToList();
-    }
+        List<Media> results = new List<Media>();
+        foreach (var m in library)
+        {
+            if (m.Title.ToLower().Contains(title.ToLower()))
+            {
+                results.Add(m);
+            }
+        }
+        return results;
 
     public List<Media> FilterByGenre(List<Media> library, string genre)
     {
-        return library.Where(m => m.Genres.Contains(genre, StringComparer.OrdinalIgnoreCase)).ToList();
+        List<Media> results = new List<Media>();
+        foreach (var m in library)
+        {
+            if (m.Genres.Contains(genre))
+            {
+                results.Add(m);
+            }
+        }
+        return results;
     }
 
     public List<Media> AdvancedSearch(List<Media> library, string genre, int minYear, int maxYear)
     {
-        return library.Where(m => m.Genres.Contains(genre, StringComparer.OrdinalIgnoreCase)
-                                && m.ReleaseYear >= minYear
-                                && m.ReleaseYear <= maxYear).ToList();
+        List<Media> results = new List<Media>();
+        foreach (var m in library)
+        {
+            if (m.Genres.Contains(genre) && m.ReleaseYear >= minYear && m.ReleaseYear <= maxYear)
+            {
+                results.Add(m);
+            }
+        }
+        return results;
     }
 
     public List<Media> SearchByActor(List<Media> library, string actorName)
     {
-        return library.Where(m => m.Cast.Any(a => a.FullName == actorName)).ToList();
-    }
-
-    public List<Media> GetTopRated(List<Media> library, int count)
-    {
-        return library.OrderByDescending(m => m.Vibe?.CalculateAverage() ?? 0).Take(count).ToList();
+        List<Media> results = new List<Media>();
+        foreach (var m in library)
+        {
+            foreach (var actor in m.Cast)
+            {
+                if (actor.FullName == actorName)
+                {
+                    results.Add(m);
+                    break;
+                }
+            }
+        }
+        return results;
     }
 }
 
 // рек схоже на те, що сподобалось
 public class RecommendationService
-{
-    public List<Media> FindSimilar(List<Media> library, Media reference, int count)
     {
-        return library.Where(m => m != reference)
-                       .OrderByDescending(m => m.CountSharedGenres(reference))
-                       .ThenByDescending(m => m.Vibe?.CalculateAverage() ?? 0)
-                       .Take(count)
-                       .ToList();
+        public List<Media> FindSimilar(List<Media> library, Media reference, int count)
+        {
+            List<Media> similar = new List<Media>();
+
+            // всі, крім того самого фільму
+            foreach (var m in library)
+            {
+                if (m != reference) similar.Add(m);
+            }
+
+            similar.Sort((a, b) => {
+                int sharedA = a.CountSharedGenres(reference);
+                int sharedB = b.CountSharedGenres(reference);
+                return sharedB.CompareTo(sharedA); // від більшого до меншого
+            });
+
+            List<Media> result = new List<Media>();
+            for (int i = 0; i < Math.Min(count, similar.Count); i++)
+            {
+                result.Add(similar[i]);
+            }
+            return result;
+        }
     }
-}
 
 // критерії для рулетки окремий об'єкт 
 public class RouletteCriteria
@@ -57,18 +102,30 @@ public class RouletteService
 {
     public Media? Choose(List<Media> library, RouletteCriteria criteria)
     {
-        var filtered = library.Where(m => m.CalculateTimeDebt() <= criteria.MaxMinutes);
+        List<Media> filtered = new List<Media>();
 
-        if (!string.IsNullOrEmpty(criteria.Tag))
+        foreach (var m in library)
         {
-            filtered = filtered.Where(m => m.Tags.Contains(criteria.Tag) || m.Genres.Contains(criteria.Tag));
+            // Перевіряємо час
+            if (m.CalculateTimeDebt() <= criteria.MaxMinutes)
+            {
+                // Перевіряємо тег, якщо він заданий
+                if (string.IsNullOrEmpty(criteria.Tag))
+                {
+                    filtered.Add(m);
+                }
+                else if (m.Tags.Contains(criteria.Tag) || m.Genres.Contains(criteria.Tag))
+                {
+                    filtered.Add(m);
+                }
+            }
         }
 
-        var list = filtered.ToList();
-        if (list.Count == 0) return null;
+        if (filtered.Count == 0) return null;
 
-        var random = new Random();
-        return list[random.Next(list.Count)];
+        Random random = new Random();
+        int index = random.Next(filtered.Count);
+        return filtered[index];
     }
 }
 
