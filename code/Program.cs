@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 class Program
 {
@@ -71,7 +70,7 @@ class Program
         Console.WriteLine($"[Пауза] {checkpoint.GetStatusDescription()}");
         Console.WriteLine(checkpoint.ResumeWatching());
 
-        Console.WriteLine("\nГотово. Натисніть будь-яку клавішу...");
+        Console.WriteLine("\nГотово");
         Console.ReadKey();
     }
 }

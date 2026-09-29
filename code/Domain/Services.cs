@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 // Пошук і фільтрація
 
@@ -18,7 +17,7 @@ public class MediaSearchService
             }
         }
         return results;
-
+    }
     public List<Media> FilterByGenre(List<Media> library, string genre)
     {
         List<Media> results = new List<Media>();
@@ -61,6 +60,24 @@ public class MediaSearchService
         }
         return results;
     }
+
+    public List<Media> GetTopRated(List<Media> library, int count)
+    {
+        List<Media> sorted = new List<Media>(library);
+
+        sorted.Sort((a, b) => {
+            double rateA = a.Vibe != null ? a.Vibe.CalculateAverage() : 0;
+            double rateB = b.Vibe != null ? b.Vibe.CalculateAverage() : 0;
+            return rateB.CompareTo(rateA);
+        });
+
+        List<Media> result = new List<Media>();
+        for (int i = 0; i < sorted.Count && i < count; i++)
+        {
+            result.Add(sorted[i]);
+        }
+        return result;
+    }
 }
 
 // рек схоже на те, що сподобалось
@@ -79,7 +96,7 @@ public class RecommendationService
             similar.Sort((a, b) => {
                 int sharedA = a.CountSharedGenres(reference);
                 int sharedB = b.CountSharedGenres(reference);
-                return sharedB.CompareTo(sharedA); // від більшого до меншого
+                return sharedB.CompareTo(sharedA); 
             });
 
             List<Media> result = new List<Media>();

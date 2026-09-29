@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 public class Season
 {
@@ -23,6 +22,11 @@ public class Season
 
     public int GetTotalRuntime()
     {
-        return Episodes.Sum(e => e.RuntimeMinutes);
+        int total = 0;
+        foreach (var episode in Episodes)
+        {
+            total += episode.RuntimeMinutes;
+        }
+        return total;
     }
 }

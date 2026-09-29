@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 public class Watchlist
 {
@@ -20,20 +19,36 @@ public class Watchlist
 
     public void AddEntry(Media item, string? personalNote)
     {
+        if (item == null) return;
         Entries.Add(new WatchlistEntry(item, personalNote));
     }
 
     public bool RemoveEntry(Media item)
     {
-        var entry = Entries.FirstOrDefault(e => e.Item == item);
-        if (entry == null) return false;
-        Entries.Remove(entry);
+        WatchlistEntry? targetEntry = null;
+        foreach (var e in Entries)
+        {
+            if (e.Item == item)
+            {
+                targetEntry = e;
+                break;
+            }
+        }
+
+        if (targetEntry == null) return false;
+
+        Entries.Remove(targetEntry);
         return true;
     }
 
     public int GetTotalTimeDebt()
     {
-        return Entries.Sum(e => e.Item.CalculateTimeDebt());
+        int total = 0;
+        foreach (var entry in Entries)
+        {
+            total += entry.Item.CalculateTimeDebt();
+        }
+        return total;
     }
 
     public void PrintContents()

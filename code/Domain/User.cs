@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 public class User
 {
@@ -14,9 +13,6 @@ public class User
 
     public User(string username)
     {
-        if (string.IsNullOrWhiteSpace(username))
-            throw new ArgumentException("Ім'я користувача не може бути порожнім.", nameof(username));
-
         Username = username;
         Watchlists = new List<Watchlist>();
         Captures = new List<CaptureEntry>();
@@ -43,9 +39,16 @@ public class User
         if (capture.Status != CaptureStatus.Resolved || capture.ResolvedMedia == null)
             return false;
 
-        var target = Watchlists.FirstOrDefault(w => w.Name == watchlistName);
-        if (target == null)
-            return false;
+        Watchlist? target = null;
+        foreach (var w in Watchlists)
+        {
+            if (w.Name == watchlistName)
+            {
+                target = w;
+                break;
+            }
+        }
+        if (target == null) return false;
 
         target.AddEntry(capture.ResolvedMedia, capture.RawNote);
         capture.Archive();
@@ -80,14 +83,26 @@ public class User
 
     public List<CaptureEntry> GetUnresolvedCaptures()
     {
-        return Captures.Where(c => c.Status == CaptureStatus.Unresolved).ToList();
+        List<CaptureEntry> unresolved = new List<CaptureEntry>();
+        foreach (var c in Captures)
+        {
+            if (c.Status == CaptureStatus.Unresolved)
+                unresolved.Add(c);
+        }
+        return unresolved;
     }
 
     public int GetMonthlyStats(int year, int month)
     {
-        return WatchHistory
-            .Where(h => h.WatchDate.Year == year && h.WatchDate.Month == month)
-            .Sum(h => h.WatchedItem.CalculateTimeDebt());
+        int totalDebt = 0;
+        foreach (var h in WatchHistory)
+        {
+            if (h.WatchDate.Year == year && h.WatchDate.Month == month)
+            {
+                totalDebt += h.WatchedItem.CalculateTimeDebt();
+            }
+        }
+        return totalDebt;
     }
 
     public Dictionary<string, int> GetMonthlyGenreBreakdown(int year, int month)
