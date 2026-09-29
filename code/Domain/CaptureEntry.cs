@@ -37,11 +37,17 @@ public class CaptureEntry
 
     public string GetStatusSummary()
     {
-        return Status switch
+        if (Status == CaptureStatus.Resolved)
         {
-            CaptureStatus.Resolved => $"✓ Розпізнано: {ResolvedMedia!.Title} (з нотатки: \"{RawNote}\")",
-            CaptureStatus.Archived => $"[архів] {RawNote}",
-            _ => $"? Ще не розпізнано: \"{RawNote}\" (джерело: {Source})"
-        };
+            return "Розпізнано: " + ResolvedMedia.Title + " (нотатка: " + RawNote + ")";
+        }
+        else if (Status == CaptureStatus.Archived)
+        {
+            return "[архів] " + RawNote;
+        }
+        else
+        {
+            return "Не розпізнано: " + RawNote + " (джерело: " + Source + ")";
+        }
     }
 }
