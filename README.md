@@ -1,6 +1,4 @@
 # Myosotis
-<img width="897" height="640" alt="image" src="https://github.com/user-attachments/assets/f8962837-455d-4490-a911-1ea3f5079e07" />
-
 
 ## 1. Загальна інформація
 
@@ -133,7 +131,11 @@ Capture може перебувати у станах:
 
 Тобто користувач може спочатку зберегти нечітку згадку про контент, а структурувати її пізніше.
 
-## 9. Стан реалізації
+## 9. Brandbook
+<img width="1748" height="1240" alt="collect watch remember" src="https://github.com/user-attachments/assets/eeffbeac-5fd2-4976-bd6f-989d621ee726" />
+Палітра: https://coolors.co/5c80bc-41d3bd-1a2235-d4915a-332d57-e2e8f0 
+
+## 10. Стан реалізації
 
 На поточному етапі реалізовано консольний вигляд на C#.
 
@@ -154,8 +156,3 @@ https://github.com/ertugrulgacal/Movie-Tracker-App
 https://github.com/LeilaniL/movieTracker
 LLM
 https://www.youtube.com/watch?v=03YGv7Myb3o&list=PLbDsRCGLbN1_-ZWS6G5ionKox0Ahrdv_H
-
-
-Палітра можлива: https://coolors.co/84dcc6-1a2235-5c80bc-332d57-e2e8f0
-https://coolors.co/41d3bd-1a2235-5c80bc-332d57-e2e8f0
-https://coolors.co/5c80bc-41d3bd-1a2235-d4915a-332d57-e2e8f0 остаточно 6 кольорів 
