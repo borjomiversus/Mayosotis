@@ -147,6 +147,12 @@ Capture може перебувати у станах:
 4. Авторизація та користувацький профіль.
 5. Розширення рекомендаційної та соціальної функціональності.
 
+### Джерела
+https://github.com/ertugrulgacal/Movie-Tracker-App
+https://github.com/LeilaniL/movieTracker
+LLM
+https://www.youtube.com/watch?v=03YGv7Myb3o&list=PLbDsRCGLbN1_-ZWS6G5ionKox0Ahrdv_H
+
 
 Палітра можлива: https://coolors.co/84dcc6-1a2235-5c80bc-332d57-e2e8f0
 https://coolors.co/41d3bd-1a2235-5c80bc-332d57-e2e8f0
