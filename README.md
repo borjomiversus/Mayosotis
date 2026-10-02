@@ -1,4 +1,6 @@
 # Myosotis
+<img width="897" height="640" alt="image" src="https://github.com/user-attachments/assets/f8962837-455d-4490-a911-1ea3f5079e07" />
+
 
 ## 1. Загальна інформація
 
