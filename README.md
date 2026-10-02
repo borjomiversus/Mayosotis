@@ -133,7 +133,7 @@ Capture може перебувати у станах:
 
 ## 9. Brandbook
 <img width="1748" height="1240" alt="collect watch remember" src="https://github.com/user-attachments/assets/eeffbeac-5fd2-4976-bd6f-989d621ee726" />
-Палітра: https://coolors.co/5c80bc-41d3bd-1a2235-d4915a-332d57-e2e8f0 
+Палітра: [https://coolors.co/5c80bc-41d3bd-1a2235-d4915a-332d57-e2e8f0](https://coolors.co/1a2235-332d57-5c80bc-84dcc6-e2e8f0-d4915a) 
 
 ## 10. Стан реалізації
 
