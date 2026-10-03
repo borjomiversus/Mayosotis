@@ -131,9 +131,9 @@ Capture може перебувати у станах:
 
 Тобто користувач може спочатку зберегти нечітку згадку про контент, а структурувати її пізніше.
 
-## 9. Brandbook
-<img width="1748" height="1240" alt="collect watch remember" src="https://github.com/user-attachments/assets/eeffbeac-5fd2-4976-bd6f-989d621ee726" />
-Палітра: [https://coolors.co/5c80bc-41d3bd-1a2235-d4915a-332d57-e2e8f0](https://coolors.co/1a2235-332d57-5c80bc-84dcc6-e2e8f0-d4915a) 
+## 9. Brand identity
+<img width="1748" height="1240" alt="collect watch remember, копія" src="https://github.com/user-attachments/assets/e8734b93-238a-43a8-bf8e-e353bb4f24e8" />
+Палітра: https://coolors.co/1a2235-332d57-5c80bc-84dcc6-e2e8f0-d4915a
 
 ## 10. Стан реалізації
 
@@ -152,7 +152,15 @@ Capture може перебувати у станах:
 5. Розширення рекомендаційної та соціальної функціональності.
 
 ### Джерела
-https://github.com/ertugrulgacal/Movie-Tracker-App
-https://github.com/LeilaniL/movieTracker
-LLM
-https://www.youtube.com/watch?v=03YGv7Myb3o&list=PLbDsRCGLbN1_-ZWS6G5ionKox0Ahrdv_H
+1. https://github.com/ertugrulgacal/Movie-Tracker-App
+2. https://github.com/LeilaniL/movieTracker
+3. LLM
+4. https://www.youtube.com/watch?v=03YGv7Myb3o&list=PLbDsRCGLbN1_-ZWS6G5ionKox0Ahrdv_H
+5. https://dribbble.com/tags/glassmorphism напрям дизайну застосунка
+6. https://dribbble.com/search/raycast дизайн
+7. https://dribbble.com/shots/14686871-2020-Spotify-Wrapped-Dashboard-Concept
+8. http://dribbble.com/shots/26983428-Abstract-Star-Logo-Concept-Modern-Gradient-Logo-Concept-for-App
+9. https://dribbble.com/shots/27590903-AI-Cybersecurity-SaaS-Website-Landing-Page-UI-Design
+10. https://dribbble.com/search/movie-site
+11. https://www.youtube.com/watch?v=FGqj4q09NtA WPF
+12. https://www.youtube.com/watch?v=OJygSefHVr0 WPF
