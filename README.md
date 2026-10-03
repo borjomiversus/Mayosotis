@@ -130,7 +130,7 @@ Capture може перебувати у станах:
 Тобто користувач може спочатку зберегти нечітку згадку про контент, а структурувати її пізніше.
 
 ## 9. Brand identity
-<img width="1748" height="1240" alt="collect watch remember, копія (1)" src="https://github.com/user-attachments/assets/93d950e4-5ce4-41b0-b172-26bd067b2cd6" />
+<img width="1748" height="1240" alt="collect watch remember, копія" src="https://github.com/user-attachments/assets/9c1dc426-814f-41ad-a913-b75a9daee61e" />
 Палітра: https://coolors.co/1a2235-332d57-5c80bc-84dcc6-e2e8f0-d4915a
 
 ## 10. Стан реалізації
